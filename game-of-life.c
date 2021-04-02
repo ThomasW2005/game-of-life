@@ -4,11 +4,11 @@
 #include <time.h>
 #include <math.h>
 #include <windows.h>
-#include "console.c"
+#include "console.c" //gotoxy, delay, ...
 
 #define XSIZE 100 // max 236
 #define YSIZE 30  // max 61(67)
-#define SLEEP 60
+#define SLEEP 5
 #define CHAR 219
 
 void print(int array[XSIZE][YSIZE]); // unused
@@ -26,7 +26,7 @@ int main()
     srand(time(0));
     SMALL_RECT windowSize = {0, 0, XSIZE, YSIZE + 4};
     SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &windowSize);
-    int cells[XSIZE][YSIZE] = {}, nextcells[XSIZE][YSIZE] = {};
+    int cells[XSIZE][YSIZE] = {0}, nextcells[XSIZE][YSIZE] = {0};
     int cycles = 0;
     //    char c;
     double timetaken, cpuTime, biggestCpuTime = 0;
